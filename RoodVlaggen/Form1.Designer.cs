@@ -55,6 +55,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // previousButton
             // 
@@ -65,6 +66,7 @@
             this.previousButton.TabIndex = 2;
             this.previousButton.Text = "Previous";
             this.previousButton.UseVisualStyleBackColor = true;
+            this.previousButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.previousButton_MouseClick);
             // 
             // nextButton
             // 
@@ -75,6 +77,7 @@
             this.nextButton.TabIndex = 3;
             this.nextButton.Text = "Next";
             this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.nextButton_MouseClick);
             // 
             // practiceButton
             // 
