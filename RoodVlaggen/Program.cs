@@ -5,6 +5,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
+
+// instructies voor gebruik:
+// ga naar flagpedia.net/download
+// download "classical resolution" (flags-normal.zip)
+// plaats de inhoud van flags-normal.zip in RoodVlaggen\flags-normal\
+
+
+
+
+
+
 namespace RoodVlaggen
 {
     static class Program
