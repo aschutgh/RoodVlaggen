@@ -9,11 +9,12 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 
+
 namespace RoodVlaggen
 {
     public partial class Form1 : Form
     {
-        public Form1(string[] flagfiles)
+        public Form1(string[] flagfiles, Dictionary<string, string> countries)
         {
             //string mypath = Directory.GetCurrentDirectory();
             //Console.Write("path: " + mypath);
@@ -21,6 +22,7 @@ namespace RoodVlaggen
             //Mypath = mypath;
             Flagfiles = flagfiles;
             Flagidx = 0;
+            Countries = countries;
             pictureBox1.Load(Flagfiles[Flagidx]);
 
         }
@@ -28,14 +30,12 @@ namespace RoodVlaggen
         public string Mypath { get; set; }
         public string[] Flagfiles { get; set; }
         public int Flagidx { get; set; }
+        public Dictionary<string, string> Countries { get; set; }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            pictureBox1.Load(@"..\..\..\flags-normal\nl.png");
-            //labelCountry.Text = Mypath;
-            
-            
-        }
+        //private void pictureBox1_Click(object sender, EventArgs e)
+        //{
+        //    pictureBox1.Load(@"..\..\..\flags-normal\nl.png");
+        //}
 
         private void previousButton_MouseClick(object sender, MouseEventArgs e)
         {
