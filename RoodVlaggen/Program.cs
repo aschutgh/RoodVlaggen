@@ -12,6 +12,10 @@ using System.IO;
 // download "classical resolution" (flags-normal.zip)
 // plaats de inhoud van flags-normal.zip in RoodVlaggen\flags-normal\
 // vb: De Nederlandse vlag staat dus in het bestand: RoodVlaggen\flags-normal\nl.png
+// verwijder de volgende bestanden (ik kan bij de countrycode de bijbehorende naam van het
+// land niet vinden):
+// 
+// 
 
 
 namespace RoodVlaggen
@@ -33,9 +37,23 @@ namespace RoodVlaggen
                 while ((line = sr.ReadLine()) != null)
                 {
                     string[] parts = line.Split(',');
+                    string countryname = "";
+                    string countrycode = "";
 
-                    string countryname = parts[0];
-                    string countrycode = parts[1];
+                    if (parts.Length > 2)
+                    {
+                        for (int i = 0; i < parts.Length - 2; i++)
+                        {
+                            countryname += parts[i];
+                        }
+                        countrycode = parts[parts.Length - 1];
+                    }
+                    else
+                    {
+                        countryname = parts[0];
+                        countrycode = parts[1];
+                    }
+
                     if (!countries.ContainsKey(countrycode))
                     {
                         countries.Add(countrycode, countryname);

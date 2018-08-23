@@ -25,18 +25,7 @@ namespace RoodVlaggen
             Countries = countries;
             pictureBox1.Load(Flagfiles[Flagidx]);
 
-            //voorbeeld code om een string te splitsen
-            //string[] RomSplit;
-            //string[] sep = new string[] { invdig };
-            //RomSplit = RomGet.Split(sep, StringSplitOptions.None);
-            //RomGet = String.Join("", RomSplit);
-
-            //string[] separators = { ",", ".", "!", "?", ";", ":", " " };
-            //string value = "The handsome, energetic, young dog was playing with his smaller, more lethargic litter mate.";
-            //string[] words = value.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-            //foreach (var word in words)
-            //    Console.WriteLine(word);
-
+            //FIXME: afsplitsen in functie
             string[] separators = { @"\", "." };
             string[] parts;
             parts = Flagfiles[Flagidx].Split(separators, StringSplitOptions.None);
@@ -66,6 +55,20 @@ namespace RoodVlaggen
                 Flagidx -= 1;
             }
             pictureBox1.Load(Flagfiles[Flagidx]);
+
+            string[] separators = { @"\", "." };
+            string[] parts;
+            parts = Flagfiles[Flagidx].Split(separators, StringSplitOptions.None);
+            var countrycode = parts[parts.Length - 2].ToUpper();
+            if (Countries.ContainsKey(countrycode))
+            {
+                labelCountry.Text = Countries[countrycode];
+            }
+            else
+            {
+                labelCountry.Text = countrycode;
+            }
+
         }
 
         private void nextButton_MouseClick(object sender, MouseEventArgs e)
@@ -79,6 +82,20 @@ namespace RoodVlaggen
                 Flagidx += 1;
             }
             pictureBox1.Load(Flagfiles[Flagidx]);
+
+            string[] separators = { @"\", "." };
+            string[] parts;
+            parts = Flagfiles[Flagidx].Split(separators, StringSplitOptions.None);
+            var countrycode = parts[parts.Length - 2].ToUpper();
+            if (Countries.ContainsKey(countrycode))
+            {
+                labelCountry.Text = Countries[countrycode];
+            }
+            else
+            {
+                labelCountry.Text = countrycode;
+            }
+            
         }
     }
 }
