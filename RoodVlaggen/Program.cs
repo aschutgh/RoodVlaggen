@@ -12,10 +12,6 @@ using System.IO;
 // download "classical resolution" (flags-normal.zip)
 // plaats de inhoud van flags-normal.zip in RoodVlaggen\flags-normal\
 // vb: De Nederlandse vlag staat dus in het bestand: RoodVlaggen\flags-normal\nl.png
-// verwijder de volgende bestanden (ik kan bij de countrycode de bijbehorende naam van het
-// land niet vinden):
-// 
-// 
 
 
 namespace RoodVlaggen
